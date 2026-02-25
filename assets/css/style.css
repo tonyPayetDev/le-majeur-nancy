@@ -1125,6 +1125,72 @@ h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.2; }
   .about-img-badge { left: -8px; }
 }
 
+/* ---- LOGO IMAGE ---- */
+.logo-img {
+  height: 50px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: filter var(--transition);
+  object-fit: contain;
+}
+.site-header.scrolled .logo-img {
+  filter: none;
+}
+
+/* ---- HERO TITLE SUB ---- */
+.hero-title-sub {
+  display: block;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--primary-light);
+  margin-top: 8px;
+}
+
+/* ---- GALLERY SECTION ---- */
+.gallery-section {
+  padding-bottom: 0;
+}
+.gallery-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 320px;
+  overflow: hidden;
+}
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+@media (max-width: 1024px) {
+  .gallery-strip {
+    grid-template-columns: repeat(3, 1fr);
+    height: 480px;
+  }
+}
+@media (max-width: 640px) {
+  .gallery-strip {
+    grid-template-columns: repeat(2, 1fr);
+    height: 400px;
+  }
+  .gallery-item:nth-child(n+5) {
+    display: none;
+  }
+}
+
 /* ---- FOCUS STYLES (accessibility) ---- */
 *:focus-visible {
   outline: 3px solid var(--primary);
